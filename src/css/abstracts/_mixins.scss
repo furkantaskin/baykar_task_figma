@@ -43,6 +43,12 @@ $uwqhd: 3440;
   }
 }
 
+@mixin cm_responsive($min_width){
+  @media screen and (min-width: #{$min-width + 1}px){
+    @content;
+  }
+}
+
 @mixin calc_ar($w, $h, $has_child: false) {
   @supports (aspect-ratio: 1/1) {
     aspect-ratio: list.slash(f.strip-units($w), f.strip-units($h));
