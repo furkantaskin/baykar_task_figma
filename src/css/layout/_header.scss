@@ -1,1 +1,56 @@
 @use '../main' as m;
+
+.header_logo {
+  display: block;
+  color: m.$primary;
+  @include m.get_font(700, 2rem, 1.1);
+}
+
+.header_lg {
+  display: none;
+}
+.header_sm {
+  display: block;
+  padding: 1rem 0;
+}
+.menuButton {
+  width: 24px;
+  svg {
+    transform: scaleX(-1);
+    &:hover {
+      path {
+        width: 100%;
+      }
+    }
+  }
+}
+.sm_nav {
+  position: absolute;
+  top: 100%;
+  left: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  background-color: m.$light_yellow;
+  transform: translateY(-50%);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  @include m.call_template();
+  &.show {
+    transform: translateY(0);
+    pointer-events: auto;
+    user-select: auto;
+    opacity: 1;
+  }
+  & > a {
+    margin-top: 1rem;
+  }
+  ul {
+    a {
+      display: block;
+      padding: 0.25rem 0;
+      color: m.$primary;
+      font-weight: 500;
+    }
+  }
+}
