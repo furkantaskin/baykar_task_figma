@@ -72,6 +72,11 @@ $uwqhd: 3440;
     -webkit-transition: $trans_number ease all;
     -o-transition: $trans_number ease all;
     transition: $trans_number ease all;
+    @media (prefers-reduced-motion: reduce){
+      -webkit-transition: unset;
+      -o-transition: unset;
+      transition: unset;
+    }
   } @else if $template == 'noscroll' {
     -ms-overflow-style: none;
     scrollbar-width: none;
