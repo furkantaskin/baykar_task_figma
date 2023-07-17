@@ -1,19 +1,38 @@
 @use '../abstracts/mixins' as m;
 @use '../abstracts/variables' as v;
 
-.btn-primary {
+
+.btn{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: v.$primary;
-  border: 2px solid v.$primary;
-  padding: 0.75rem;
+  border: 2px solid;
   border-radius: 0.5rem;
   letter-spacing: 0.5px;
-  @include m.get_font(500, 1rem, 1.5);
+  font-weight: 500;
+}
+
+.btn-primary {
+  color: v.$primary;
+  border-color: v.$primary;
+  padding: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
   @include m.call_template();
   @include m.no_hover {
     background-color: v.$primary;
     color: #fff;
+  }
+}
+
+
+.btn-dark{
+  border-color: #fff;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: #fff;
+  @include m.no_hover{
+    background-color: #fff;
+    color: v.$dark;
   }
 }
