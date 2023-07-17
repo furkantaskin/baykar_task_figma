@@ -1,7 +1,12 @@
 @use 'sass:list';
 @use 'functions' as f;
 
-@mixin mask-parameters($size: contain, $position: center, $repeat: no-repeat, $image: null) {
+@mixin mask-parameters(
+  $size: contain,
+  $position: center,
+  $repeat: no-repeat,
+  $image: null
+) {
   -webkit-mask-size: $size;
   mask-size: $size;
   -webkit-mask-repeat: $repeat;
@@ -22,8 +27,7 @@
 ) {
   @if ($image) {
     background: $repeat $position/$size url($image);
-  }
-  @else {
+  } @else {
     background: $repeat $position/$size;
   }
 }
@@ -43,8 +47,8 @@ $uwqhd: 3440;
   }
 }
 
-@mixin cm_responsive($min_width){
-  @media screen and (min-width: #{$min-width + 1}px){
+@mixin cm_responsive($min_width) {
+  @media screen and (min-width: #{$min-width + 1}px) {
     @content;
   }
 }
@@ -69,13 +73,10 @@ $uwqhd: 3440;
 
 @mixin call_template($template: 'transition', $trans_number: 0.3s) {
   @if $template == 'transition' {
-    -webkit-transition: $trans_number ease all;
-    -o-transition: $trans_number ease all;
-    transition: $trans_number ease all;
-    @media (prefers-reduced-motion: reduce){
-      -webkit-transition: unset;
-      -o-transition: unset;
-      transition: unset;
+    @media (prefers-reduced-motion: no-preference) {
+      -webkit-transition: $trans_number ease all;
+      -o-transition: $trans_number ease all;
+      transition: $trans_number ease all;
     }
   } @else if $template == 'noscroll' {
     -ms-overflow-style: none;
@@ -89,10 +90,9 @@ $uwqhd: 3440;
   }
 }
 
-
-@mixin no_hover(){
-  @media (hover: hover){
-    &:hover{
+@mixin no_hover() {
+  @media (hover: hover) {
+    &:hover {
       @content;
     }
   }
@@ -139,5 +139,7 @@ $uwqhd: 3440;
   $font_size: 16px,
   $line_height: 1
 ) {
-  font: $font_weight list.slash($font_size, $line_height) "Roboto", sans-serif;
+  font-weight: $font_weight;
+  font-size: $font_size;
+line-height: $line_height;
 }
