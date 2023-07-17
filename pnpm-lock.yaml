@@ -11,6 +11,9 @@ dependencies:
   bootstrap:
     specifier: 5.3.0-alpha3
     version: 5.3.0-alpha3(@popperjs/core@2.11.7)
+  glightbox:
+    specifier: ^3.2.0
+    version: 3.2.0
   photoswipe:
     specifier: ^5.3.7
     version: 5.3.7
@@ -1003,6 +1006,10 @@ packages:
     resolution: {integrity: sha512-dVKBjfWisLAicarI2Sf+JuBE/DghV4UzNAVe9yhEJuzeREd3JhOTE9cUaJTeSa77fsbQUK3pcOpJfM59+VKZaA==}
     engines: {node: '>=12'}
     dev: true
+
+  /glightbox@3.2.0:
+    resolution: {integrity: sha512-iit1xYixqL4YVL+I2YJLfMeyJwvLi6FE6kY3qNKeZHEJgRIz80QU8Rm7YCyw1wOTgXvmNDnXGVhHOHRCwnDltQ==}
+    dev: false
 
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
