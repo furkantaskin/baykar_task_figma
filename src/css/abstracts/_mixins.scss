@@ -84,6 +84,15 @@ $uwqhd: 3440;
   }
 }
 
+
+@mixin no_hover(){
+  @media (hover: hover){
+    &:hover{
+      @content;
+    }
+  }
+}
+
 @mixin pos_abs($top: 0, $right: 0, $bottom: 0, $left: 0) {
   position: absolute;
   @supports (inset: 0) {
@@ -125,7 +134,5 @@ $uwqhd: 3440;
   $font_size: 16px,
   $line_height: 1
 ) {
-  font-weight: #{$font_weight};
-  font-size: #{$font_size};
-  line-height: #{$line_height};
+  font: $font_weight list.slash($font_size, $line_height) "Roboto", sans-serif;
 }
