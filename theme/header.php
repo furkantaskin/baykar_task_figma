@@ -45,6 +45,8 @@ include "components/svg-sprite.php";
                         <a href="" title="Log In">Log In</a>
                     </li>
                 </ul>
+                <a href="" title="Sign up now" class="btn btn-primary">Sign up now</a>
+
             </nav>
         </div>
     </header>
@@ -77,6 +79,6 @@ include "components/svg-sprite.php";
                     <a href="" title="Log In">Log In</a>
                 </li>
             </ul>
-            <a href="" title="Sign up now" class="btn-primary">Sign up now</a>
+            <a href="" title="Sign up now" class="btn btn-primary">Sign up now</a>
         </nav>
     </header>
