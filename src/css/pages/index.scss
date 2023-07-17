@@ -1,9 +1,203 @@
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:list';
 @use '../main' as m;
 @use '../layout/header';
 @use '../layout/footer';
 @use '../vendors/swiper';
+@use '../vendors/glightbox';
 
-main {
-  // Use mixins or functions like @include m.calc_ar(200px, 10px);
-  @include m.calc_ar(200px, 10px);
+.banner {
+  &_upper {
+    padding: 3rem 1rem;
+    h1 {
+      margin: 0 0 2rem;
+      color: m.$dark;
+      text-align: center;
+      @include m.get_font(800, 3.5rem, 1.1);
+    }
+    p {
+      @extend h1;
+      @include m.get_font(400, 1.125rem, 1.6);
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      z-index: -1;
+      border-style: solid;
+      border-width: 0 0 82vw 100vw;
+      aspect-ratio: 393/324;
+      border-color: transparent transparent m.$light_yellow
+        transparent;
+    }
+  }
+  &_nav {
+    margin-bottom: 2rem;
+    gap: 1rem;
+    .btn-primary {
+      padding: 1rem 2rem;
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+    .glightbox {
+      @include m.get_font(500, 1rem, 1.5);
+      color: m.$primary;
+    }
+  }
+  .img_wrapper {
+    img {
+      width: 100%;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 10%;
+      top: 13%;
+      width: 75%;
+      border-radius: 3.125rem;
+      aspect-ratio: 273/276;
+      background-color: #fbbf24;
+      z-index: -1;
+    }
+  }
+
+  &_lower {
+    padding: 3rem 1rem;
+    gap: 2rem;
+    background-color: m.$light_yellow;
+  }
+  &_card {
+    $absolute_values: (100, 75, 125);
+    $default_box_width: 361;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      margin: 1rem 0;
+      @include m.get_font(500, 20px, 1.1);
+    }
+    p {
+      text-align: center;
+      @include m.get_font(400, 18px, 1.6);
+    }
+    .abs_elem {
+      position: absolute;
+    }
+    @for $i from 1 through 3 {
+      // Calculate the percentage of right value to the default box value according to mobile and get the percentage value from it
+      &:nth-child(#{$i}) {
+        $right_value: nth($absolute_values, $i);
+
+        .abs_elem {
+          top: 0;
+          right: 50%;
+          transform: translateX(#{$right_value * 1%});
+        }
+      }
+    }
+  }
+}
+
+.prods {
+  text-align: center;
+  padding: 3rem 1rem;
+  gap: 2rem;
+  background-color: m.$dark;
+
+  &_heading {
+    gap: 2rem;
+    span {
+      display: block;
+      color: #fff;
+      @include m.get_font(700, 32px, 1.1);
+    }
+    a {
+      display: inline-flex;
+      padding: 1.25rem 3rem;
+    }
+  }
+
+  &_card {
+    // Border radius to apply to both card and image
+    $border_radius: 0.625rem;
+    //
+
+    z-index: 1;
+    border-radius: $border_radius;
+    background-color: m.$dark;
+    text-align: left;
+    color: #fff;
+    padding-bottom: 2rem;
+    box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.07),
+      0px 25px 50px -12px rgba(255, 255, 255, 0.25);
+
+    & > picture img {
+      aspect-ratio: 361/220;
+      object-fit: cover;
+      object-position: center;
+      margin-bottom: 2rem;
+      border-top-left-radius: $border_radius;
+      border-top-right-radius: $border_radius;
+    }
+    .title {
+      padding: 0 2rem;
+      margin-bottom: 1rem;
+      @include m.get_font(700, 24px, 1.1);
+    }
+    p {
+      margin-bottom: 2rem;
+      padding: 0 2rem;
+      @include m.get_font(400, 18px, 1.6);
+    }
+    a {
+      margin: 0 2rem;
+      padding: 1rem;
+      img {
+        width: 24px;
+      }
+      span {
+        padding: 0 1rem;
+        letter-spacing: 0.5px;
+        @include m.get_font(500, 20px, 1.2);
+      }
+    }
+  }
+  .card_wrapper {
+    .rect {
+      position: absolute;
+      z-index: 1;
+      aspect-ratio: 1;
+      rect {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .rect-1 {
+      bottom: -2rem;
+      width: 56%;
+      left: 1.25rem;
+    }
+    .rect-2 {
+      top: 30%;
+      width: 33%;
+      right: -1rem;
+    }
+    .rect-5{
+      top: 11%;
+      width: 41%;
+      left: -1rem;
+    }
+    .rect-3{
+      display: none;
+    }
+    .rect-4{
+      display: none;
+    }
+  }
 }
