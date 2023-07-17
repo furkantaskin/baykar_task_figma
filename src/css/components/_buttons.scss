@@ -12,10 +12,8 @@
   letter-spacing: 0.5px;
   @include m.get_font(500, 1rem, 1.5);
   @include m.call_template();
-  @media (hover: hover) {
-    &:hover {
-      background-color: v.$primary;
-      color: #fff;
-    }
+  @include m.no_hover {
+    background-color: v.$primary;
+    color: #fff;
   }
 }
