@@ -1,9 +1,11 @@
 @use 'sass:math';
 
+// Base declarations for general elements
+
 body {
   position: relative;
   overflow-x: hidden;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 a {
   text-decoration: none;
