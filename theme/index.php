@@ -11,7 +11,7 @@ include "header.php";
                 eu imperdiet ipsum ultrices amet.</p>
             <div class="banner_nav d-flex j-c a-c">
                 <a href="" class="btn btn-primary" title="Sign up now">Sign up now</a>
-                <a href="<?= domain ?>assets/video/dummyvideo_1.mp4" class="glightbox" title="Demo video">
+                <a href="<?= domain ?>assets/video/dummyvideo_1.mp4" class="glightbox d-flex a-c" title="Demo video">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                         <path
                             d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10Zm0-2a8 8 0 1 0 0-16.001A8 8 0 0 0 12 20Zm4.126-6.254-4.055 2.898c-.905.646-2.13.389-2.737-.576A2.201 2.201 0 0 1 9 14.898V9.102C9 7.942 9.883 7 10.972 7c.391 0 .774.124 1.099.356l4.055 2.898c.905.647 1.146 1.952.54 2.917-.14.225-.324.42-.54.575Zm-5.154-4.644v5.796L15.027 12l-4.055-2.898Z"
@@ -22,9 +22,9 @@ include "header.php";
             </div>
             <div class="img_wrapper p-rel">
                 <picture>
-                    <source src="<?= domain ?>assets/img/banner_img.webp" type="image/webp">
-                    <source src="<?= domain ?>assets/img/banner_img.png" type="image/png">
-                    <img src="<?= domain ?>assets/img/banner_img.webp" alt="Green sport shoe with Nike brand">
+                    <source srcset="<?= domain ?>assets/img/webp/banner_img.webp" type="image/webp">
+                    <source srcset="<?= domain ?>assets/img/png/banner_img.png" type="image/png">
+                    <img src="<?= domain ?>assets/img/png/banner_img.png" alt="Green sport shoe with Nike brand">
                 </picture>
             </div>
         </div>
@@ -116,9 +116,10 @@ include "header.php";
                 <?php endif; ?>
                 <div class=" prods_card p-rel">
                     <picture>
-                        <source src="assets/img/prod_<?= $i ?>.webp" type="image/webp">
-                        <source src="assets/img/prod_<?= $i ?>.png" type="image/png">
-                        <img src="<?= domain ?>assets/img/prod_<?= $i ?>.webp" alt="Shoes with different colors">
+                        <source srcset="<?= domain ?>assets/img/webp/prod_<?= $i ?>.webp" type="image/webp">
+                        <source srcset="<?= domain ?>assets/img/png/prod_<?= $i ?>.png" type="image/png">
+                        <img src="<?= domain ?>assets/img/png/prod_<?= $i ?>.png" alt="Shoes with different colors"
+                            loading="lazy">
                     </picture>
                     <div class="title">Title</div>
                     <p>Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.</p>
@@ -131,16 +132,143 @@ include "header.php";
         <?php endfor; ?>
     </section>
     <section class="join">
-        <div class="wrapper d-flex f-c a-c">
-            <div>
+        <div class="wrapper">
+            <div class="left d-flex f-c a-c p-rel">
                 <span>Why join us</span>
-                <ul>
-                    <li>Est et in pharetra magna adipiscing ornare aliquam.</li>
-                    <li>Tellus arcu sed consequat ac velit ut eu blandit.</li>
-                    <li>Ullamcorper ornare in et egestas dolor orci.</li>
+                <ul class="d-flex f-c">
+                    <li class="d-flex a-s">
+                        <picture>
+                            <source srcset="<?= domain ?>assets/img/svg/checkmark.svg" type="image/svg+xml">
+                            <source srcset="<?= domain ?>assets/img/png/checkmark.png" type="image/png">
+                            <img src="<?= domain ?>assets/img/png/checkmark.png" alt="Checkmark" loading="lazy">
+                        </picture>
+                        <p>Est et in pharetra magna adipiscing ornare aliquam.</p>
+                    </li>
+                    <li class="d-flex a-s">
+                        <picture>
+                            <source srcset="<?= domain ?>assets/img/svg/checkmark.svg" type="image/svg+xml">
+                            <source srcset="<?= domain ?>assets/img/png/checkmark.png" type="image/png">
+                            <img src="<?= domain ?>assets/img/png/checkmark.png" alt="Checkmark" loading="lazy">
+                        </picture>
+                        <p>
+                            Tellus arcu sed consequat ac velit ut eu blandit.
+                        </p>
+                    </li>
+                    <li class="d-flex a-s">
+                        <picture>
+                            <source srcset="<?= domain ?>assets/img/svg/checkmark.svg" type="image/svg+xml">
+                            <source srcset="<?= domain ?>assets/img/png/checkmark.png" type="image/png">
+                            <img src="<?= domain ?>assets/img/png/checkmark.png" alt="Checkmark" loading="lazy">
+                        </picture>
+                        <p>Ullamcorper ornare in et egestas dolor orci.</p>
+                    </li>
                 </ul>
+                <a href="" class="btn btn-primary" title="Sign up now">Sign up now</a>
             </div>
-            <div></div>
+            <div class="right p-rel">
+                <div class="shapes">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 411 134" class="shape-1">
+                        <path fill="#fde68a" d="M0 0h411v134H0z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 135" width="135" height="135"
+                        class="shape-2">
+                        <rect width="135" height="135" rx="50" fill="rgba(190,24,93,0.75)" />
+                    </svg>
+                    <?php for ($i = 3; $i <= 6; $i++):
+                        $class_name = "shape-" . $i;
+                        echo getSprite("circle-shape", $class_name);
+                    endfor; ?>
+
+                </div>
+                <div class="video_wrapper p-rel">
+
+
+                    <div class="top_bar d-flex a-c">
+                        <?= getSprite("frame_button", "red") ?>
+                        <?= getSprite("frame_button", "yellow") ?>
+                        <?= getSprite("frame_button", "green") ?>
+                    </div>
+                    <div class="screen p-rel">
+                        <picture>
+                            <source srcset="<?= domain ?>assets/img/webp/thumbnail.webp" type="image/webp">
+                            <source srcset="<?= domain ?>assets/img/png/thumbnail.png" type="image/png">
+                            <img src="<?= domain ?>assets/img/png/thumbnail.png" alt="Video thumbnail" loading="lazy">
+                        </picture>
+                        <a class="play glightbox p-abs d-flex a-c j-c"
+                            href="<?= domain ?>assets/video/dummyvideo_2.mp4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="97" height="97" fill="none">
+                                <path
+                                    d="M71.78 50.796a3.903 3.903 0 0 0-1.296-5.452L30.796 21.216a4.124 4.124 0 0 0-2.14-.596c-2.24 0-4.052 1.772-4.052 3.96v48.244c0 .74.212 1.464.612 2.092 1.184 1.856 3.68 2.424 5.58 1.268L70.484 52.06c.524-.32.972-.756 1.3-1.268l-.004.004Zm2.984 7.988L35.08 82.908c-5.7 3.468-13.2 1.76-16.744-3.804a11.672 11.672 0 0 1-1.836-6.28v-48.24c0-6.564 5.44-11.88 12.16-11.88 2.268 0 4.492.62 6.42 1.792l39.684 24.128c5.7 3.464 7.448 10.784 3.9 16.352a12.028 12.028 0 0 1-3.9 3.808Z"
+                                    fill="#fff" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials">
+        <div class="testimonials_heading d-flex j-b a-c">
+            <span>Because they love us</span>
+            <div class="testimonials_nav">
+
+            </div>
+        </div>
+        <div class="testimonials-swiper p-rel">
+            <div class="swiper-wrapper">
+                <?php
+                $users = ["Hellen Jummy", "Hellena John", "David Oshodi", "Alexandra Doe"];
+                $titles = ["Team Lead", "Co-Founder", "Manager", "Engineer"];
+                $content = [
+                    "Non risus viverra enim, quis. Eget vitae arcu vivamus sit tellus, viverra turpis lorem. Varius a turpis urna id porttitor.",
+                    "Aliquet ridiculus mi porta habitant vulputate rhoncus, mattis amet enim. Sit purus venenatis velit semper lectus sed ornare quam nulla.",
+                    "A eget sed posuere dui risus habitasse mauris. Venenatis aliquet id ultrices a lacus. Pretium vehicula pretium posuere justo sed.",
+                    "Magna egestas aliquet ut integer non. Sed diam enim nibh sit. Aliquam laoreet aenean metus nibh eu scelerisque."
+                ];
+
+                for ($i = 1; $i <= 10; $i++):
+                    
+                    $get_index = rand(0, 3);
+                    ?>
+                    <div class="swiper-slide">
+                        <div class="testimonial d-flex f-c j-b">
+                            <div class="icon">
+                                <picture>
+                                    <source srcset="<?= domain ?>assets/img/webp/logo_<?= $get_index + 1 ?>.webp"
+                                        type="image/webp">
+                                    <source srcset="<?= domain ?>assets/img/png/logo_<?= $get_index + 1 ?>.png"
+                                        type="image/png">
+                                    <img src="<?= domain ?>assets/img/png/logo_<?= $get_index + 1 ?>.png"
+                                        alt="Company logo">
+                                </picture>
+                            </div>
+                            <div class="content">
+                                <?= $content[$get_index] ?>
+                            </div>
+                            <div class="author d-flex a-c">
+                                <div>
+                                    <picture>
+                                        <source srcset="<?= domain ?>assets/img/webp/user_<?= $get_index + 1 ?>.webp"
+                                            type="image/webp">
+                                        <source srcset="<?= domain ?>assets/img/png/user_<?= $get_index + 1 ?>.png"
+                                            type="image/png">
+                                        <img src="<?= domain ?>assets/img/png/user_<?= $get_index + 1 ?>.png"
+                                            alt="<?= $users[$get_index] ?>">
+                                    </picture>
+                                </div>
+                                <div class="h-100 d-flex f-c j-c">
+                                    <span>
+                                        <?= $users[$get_index] ?>
+                                    </span>
+                                    <p>
+                                        <?= $titles[$get_index] ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endfor; ?>
+            </div>
         </div>
     </section>
 </main>
