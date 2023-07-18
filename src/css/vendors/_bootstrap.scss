@@ -1,7 +1,18 @@
+@use "sass:list";
+@use "sass:map";
 @import '../../../node_modules/bootstrap/scss/mixins/banner';
 @include bsBanner('');
 
+// Remove "!important" from properties
 $enable-important-utilities: false;
+
+// Create spacing as the multipliers of 4px instead of 16px
+
+$custom_spacer: .25rem;
+$spacers: ();
+@for $i from 1 through 24{
+    $spacers: map.set($spacers, $i, $custom_spacer * $i);
+}
 
 // scss-docs-start import-stack
 // Configuration
@@ -12,13 +23,18 @@ $enable-important-utilities: false;
 @import '../../../node_modules/bootstrap/scss/mixins';
 @import '../../../node_modules/bootstrap/scss/utilities';
 
+
+
 // Layout & components
 @import '../../../node_modules/bootstrap/scss/root';
 @import '../../../node_modules/bootstrap/scss/reboot';
 @import '../../../node_modules/bootstrap/scss/containers';
 @import '../../../node_modules/bootstrap/scss/grid';
+@import '../../../node_modules/bootstrap/scss/type';
 
-/* @import '../../../node_modules/bootstrap/scss/root';
+
+/* 
+@import '../../../node_modules/bootstrap/scss/root';
 @import '../../../node_modules/bootstrap/scss/reboot';
 @import '../../../node_modules/bootstrap/scss/type';
 @import '../../../node_modules/bootstrap/scss/images';
@@ -48,11 +64,12 @@ $enable-important-utilities: false;
 @import '../../../node_modules/bootstrap/scss/carousel';
 @import '../../../node_modules/bootstrap/scss/spinners';
 @import '../../../node_modules/bootstrap/scss/offcanvas';
-@import '../../../node_modules/bootstrap/scss/placeholders'; */
+@import '../../../node_modules/bootstrap/scss/placeholders';
+*/
 
 // Helpers
-// @import '../../../node_modules/bootstrap/scss/helpers';
+@import '../../../node_modules/bootstrap/scss/helpers';
 
 // Utilities
-// @import '../../../node_modules/bootstrap/scss/utilities/api';
+@import '../../../node_modules/bootstrap/scss/utilities/api';
 // scss-docs-end import-stack
