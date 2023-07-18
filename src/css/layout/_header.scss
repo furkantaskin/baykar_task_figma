@@ -2,7 +2,7 @@
 
 .header_logo {
   display: block;
-  color: m.$primary;
+  color: m.$amber;
   @include m.get_font(700, 2rem, 1.1);
 }
 

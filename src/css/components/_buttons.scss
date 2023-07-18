@@ -13,14 +13,14 @@
 }
 
 .btn-primary {
-  color: v.$primary;
-  border-color: v.$primary;
+  color: v.$amber;
+  border-color: v.$amber;
   padding: 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
   @include m.call_template();
   @include m.no_hover {
-    background-color: v.$primary;
+    background-color: v.$amber;
     color: #fff;
   }
 }
