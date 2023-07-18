@@ -1,0 +1,28 @@
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+
+
+.heading{
+    @include m.get_font(700, 2rem, 1.1);
+}
+
+.heading-white{
+    color: #fff;
+}
+
+.heading-dark{
+    color: v.$dark;
+}
+
+.txt{
+    color: v.$dark;
+    @include m.get_font(400, 1.125rem, 1.6);
+}
+
+.txt-dark{
+    color: v.$dark;
+}
+
+.txt-light{
+    color: #fff;
+}
