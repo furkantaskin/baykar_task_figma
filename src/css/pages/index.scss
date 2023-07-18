@@ -45,6 +45,7 @@
       line-height: 1.2;
     }
     .glightbox {
+      gap: 0.5rem;
       @include m.get_font(500, 1rem, 1.5);
       color: m.$primary;
     }
@@ -138,6 +139,7 @@
       0px 25px 50px -12px rgba(255, 255, 255, 0.25);
 
     & > picture img {
+      width: 100%;
       aspect-ratio: 361/220;
       object-fit: cover;
       object-position: center;
@@ -188,16 +190,238 @@
       width: 33%;
       right: -1rem;
     }
-    .rect-5{
+    .rect-5 {
       top: 11%;
       width: 41%;
       left: -1rem;
     }
-    .rect-3{
+    .rect-3 {
       display: none;
     }
-    .rect-4{
+    .rect-4 {
       display: none;
+    }
+  }
+}
+
+.join {
+  padding: 1rem 1rem 3.5rem;
+  .wrapper {
+    padding: 2rem 1rem;
+    background-color: #fff;
+    border-radius: 1.875rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.07),
+      0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  .left {
+    z-index: 2;
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    span {
+      text-align: center;
+      color: m.$dark;
+      @include m.get_font(700, 32px, 1.1);
+    }
+    ul {
+      gap: 0.5rem;
+      width: 100%;
+    }
+    li {
+      width: 100%;
+      gap: 0.5rem;
+      p {
+        margin: 0;
+      }
+    }
+    a {
+      display: inline-flex;
+      padding: 1rem 2rem;
+      @include m.get_font(500, 20px, 1.2);
+    }
+  }
+
+  .right {
+    z-index: 1;
+  }
+
+  // Border radius for video screen
+  $border_radius: 1.25rem;
+
+  .video_wrapper {
+    border-radius: $border_radius;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.07),
+      0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .top_bar {
+    padding: 1rem;
+    background-color: #fff;
+    gap: 5px;
+    border-top-left-radius: $border_radius;
+    border-top-right-radius: $border_radius;
+    svg {
+      width: 10px;
+      height: 10px;
+      // Get colors map using svg
+      $colors: (
+        'green': #22c55e,
+        'red': #e11d48,
+        'yellow': #fbbf24,
+      );
+      @each $color, $hex in $colors {
+        &.#{$color} {
+          fill: $hex;
+        }
+      }
+    }
+  }
+  .screen {
+    padding: 0 5px 5px;
+    background-color: #fff;
+    border-bottom-left-radius: $border_radius;
+    border-bottom-right-radius: $border_radius;
+    img {
+      width: 100%;
+      aspect-ratio: 329/193;
+      object-fit: cover;
+      object-position: bottom;
+      border-bottom-left-radius: $border_radius;
+      border-bottom-right-radius: $border_radius;
+    }
+  }
+  .play {
+    top: 50%;
+    left: 50%;
+    border-radius: 100px;
+    transform: translate(-50%, -50%);
+    padding: 1.5rem 1.25rem 1.5rem 1.75rem;
+    background-color: rgba(#121619, 0.75);
+    svg {
+      width: 96px;
+      height: 96px;
+    }
+  }
+  .shapes {
+    svg {
+      position: absolute;
+    }
+    .shape-1 {
+      width: 104vw;
+      transform: rotate(-45deg);
+      filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.07));
+      top: 15vw;
+      left: -19vw;
+    }
+    .shape-2 {
+      width: 35vw;
+      right: -14vw;
+      bottom: -15vw;
+    }
+    .shape-3 {
+      bottom: calc(100% + 7px);
+      right: 2rem;
+      width: 36px;
+      fill: #0369a1;
+    }
+    .shape-4 {
+      top: 100%;
+      left: 11vw;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 50px;
+      fill: #15803d;
+    }
+
+    .shape-5 {
+      top: 6vw;
+      left: calc(-1rem - 5px);
+      width: 55px;
+      fill: #b45309;
+    }
+    .shape-6 {
+      right: 3.5rem;
+      bottom: 0;
+      width: 46px;
+      transform: translateY(50%);
+      fill: #a21caf;
+    }
+  }
+}
+
+.testimonials {
+  padding: 3rem 0;
+  &_heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    span {
+      display: block;
+      width: 100%;
+      color: m.$dark;
+      @include m.get_font(700, 2rem, 1.1);
+    }
+  }
+  .swiper-slide {
+    height: auto;
+    align-self: stretch;
+    position: relative;
+  }
+
+  &-swiper{
+    &::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -1rem;
+      height: 93%;
+      background-color: m.$light_yellow;
+      z-index: -1;
+    }
+  }
+}
+
+.testimonial {
+  background-color: #fff;
+  z-index: 2;
+  height: 100%;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.07),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  .icon {
+    padding: 1rem 0;
+    img {
+      height: 2rem;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+  p {
+    margin: 0;
+    color: m.$dark;
+    @include m.get_font(400, 1rem, 1.4);
+  }
+  .author {
+    padding-top: 1rem;
+    gap: 1rem;
+    img {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    span {
+      color: m.$dark;
+      display: block;
+      @include m.get_font(400, 1.125rem, 1.6);
+    }
+    p {
+      color: #475569;
+      @include m.get_font(400, 1rem, 1.4);
     }
   }
 }
