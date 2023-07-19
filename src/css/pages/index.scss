@@ -143,47 +143,6 @@
     }
   }
 
-  // Border radius for video screen
-  $border_radius: 1.25rem;
-
-  .video_wrapper {
-    border-radius: $border_radius;
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.07),
-      0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  }
-
-  .top_bar {
-    gap: 5px;
-    border-top-left-radius: $border_radius;
-    border-top-right-radius: $border_radius;
-    svg {
-      width: 10px;
-      height: 10px;
-      // Get colors map using svg
-      $colors: (
-        'green': #22c55e,
-        'red': #e11d48,
-        'yellow': #fbbf24,
-      );
-      @each $color, $hex in $colors {
-        &.#{$color} {
-          fill: $hex;
-        }
-      }
-    }
-  }
-  .screen {
-    padding: 0 5px 5px;
-    background-color: #fff;
-    border-bottom-left-radius: $border_radius;
-    border-bottom-right-radius: $border_radius;
-    img {
-      aspect-ratio: 329/193;
-      object-position: bottom;
-      border-bottom-left-radius: $border_radius;
-      border-bottom-right-radius: $border_radius;
-    }
-  }
   .play {
     border-radius: 100px;
     transform: translate(-50%, -50%);
@@ -253,7 +212,7 @@
       z-index: -1;
     }
   }
-  .swiper-slide{
+  .swiper-slide {
     height: auto;
     align-self: stretch;
   }
@@ -288,7 +247,43 @@
 }
 
 .collection {
-  p {
-    text-align: center;
+  @include m.call_template('noscroll');
+  .buttons {
+    white-space: nowrap;
+  }
+  .button {
+    img {
+      width: 24px;
+    }
+    span {
+      @include m.get_font(500, 1.25rem, 1.2);
+    }
+    &.active {
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07),
+        0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+  }
+  .frame-window {
+    width: 75vw;
+    &:nth-of-type(2) {
+      $top_val: round(math.div(57, 201) * 100);
+      $left_val: round(math.div(36, 294) * 100);
+      top: #{$top_val * 1%};
+      left: #{$left_val * 1%};
+    }
+  }
+  .collection_img {
+    width: 26vw;
+    $top_val: round(math.div(121, 201) * 100);
+    $left_val: round(math.div(262, 294) * 100);
+    top: #{$top_val * 1%};
+    left: #{$left_val * 1%};
+    img {
+      border: 5px solid #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.07),
+        0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
   }
 }
