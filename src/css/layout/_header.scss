@@ -9,28 +9,16 @@
 .header_lg {
   display: none;
 }
-.header_sm {
-  padding: 1rem;
-  z-index: 3;
-}
 .menuButton {
   width: 24px;
   svg {
     transform: scaleX(-1);
-    &:hover {
-      path {
-        width: 100%;
-      }
-    }
   }
 }
 .sm_nav {
   position: absolute;
-  top: 100%;
   left: 1rem;
   right: 1rem;
-  padding: 1rem;
-  background-color: m.$light_yellow;
   transform: translateY(-50%);
   pointer-events: none;
   user-select: none;
@@ -41,18 +29,5 @@
     pointer-events: auto;
     user-select: auto;
     opacity: 1;
-  }
-  & > a {
-    margin-top: 1rem;
-    color: m.$dark;
-    border-color: m.$dark;
-  }
-  ul {
-    a {
-      display: block;
-      padding: 0.25rem 0;
-      color: m.$dark;
-      font-weight: 500;
-    }
   }
 }
