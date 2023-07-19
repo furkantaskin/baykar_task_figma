@@ -1,37 +1,47 @@
-@use "sass:list";
-@use "sass:map";
+@use 'sass:list';
+@use 'sass:map';
 @import '../../../node_modules/bootstrap/scss/mixins/banner';
 @include bsBanner('');
 
 // Remove "!important" from properties
 $enable-important-utilities: false;
 
-// Create spacing as the multipliers of 4px instead of 16px
+// 
 
-$custom_spacer: .25rem;
+// Create spacing as the multipliers of 4px instead of 16px
+$custom_spacer: 0.25rem;
 $spacers: ();
-@for $i from 1 through 24{
-    $spacers: map.set($spacers, $i, $custom_spacer * $i);
+@for $i from 0 through 24 {
+  $spacers: map.set($spacers, $i, $custom_spacer * $i);
 }
+
 
 // scss-docs-start import-stack
 // Configuration
 @import '../../../node_modules/bootstrap/scss/functions';
 @import '../../../node_modules/bootstrap/scss/variables';
 @import '../../../node_modules/bootstrap/scss/variables-dark';
+
+// Add theme colors to Bootstrap (Should be defined here because of v5.2.0 -> https://github.com/twbs/bootstrap/pull/34942)
+$custom-colors: (
+  'mf-amber': #78350f,
+  'mf-dark': #0f172a,
+  'mf-light': #e2e8f0,
+  'mf-yellow': #fef3c7,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
 @import '../../../node_modules/bootstrap/scss/maps';
 @import '../../../node_modules/bootstrap/scss/mixins';
 @import '../../../node_modules/bootstrap/scss/utilities';
 
 
-
 // Layout & components
 @import '../../../node_modules/bootstrap/scss/root';
 @import '../../../node_modules/bootstrap/scss/reboot';
-@import '../../../node_modules/bootstrap/scss/containers';
-@import '../../../node_modules/bootstrap/scss/grid';
 @import '../../../node_modules/bootstrap/scss/type';
-
 
 /* 
 @import '../../../node_modules/bootstrap/scss/root';
