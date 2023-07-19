@@ -6,15 +6,12 @@
 // Remove "!important" from properties
 $enable-important-utilities: false;
 
-// 
-
 // Create spacing as the multipliers of 4px instead of 16px
 $custom_spacer: 0.25rem;
 $spacers: ();
 @for $i from 0 through 24 {
   $spacers: map.set($spacers, $i, $custom_spacer * $i);
 }
-
 
 // scss-docs-start import-stack
 // Configuration
@@ -32,11 +29,9 @@ $custom-colors: (
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
-
 @import '../../../node_modules/bootstrap/scss/maps';
 @import '../../../node_modules/bootstrap/scss/mixins';
 @import '../../../node_modules/bootstrap/scss/utilities';
-
 
 // Layout & components
 @import '../../../node_modules/bootstrap/scss/root';
