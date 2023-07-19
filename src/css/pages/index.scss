@@ -9,16 +9,8 @@
 
 .banner {
   &_upper {
-    padding: 3rem 1rem;
     h1 {
-      margin: 0 0 2rem;
-      color: m.$dark;
-      text-align: center;
       @include m.get_font(800, 3.5rem, 1.1);
-    }
-    p {
-      @extend h1;
-      @include m.get_font(400, 1.125rem, 1.6);
     }
     &::before {
       content: '';
@@ -37,23 +29,15 @@
     }
   }
   &_nav {
-    margin-bottom: 2rem;
-    gap: 1rem;
     .btn-primary {
-      padding: 1rem 2rem;
       font-size: 1.25rem;
       line-height: 1.2;
     }
     .glightbox {
-      gap: 0.5rem;
       @include m.get_font(500, 1rem, 1.5);
-      color: m.$primary;
     }
   }
   .img_wrapper {
-    img {
-      width: 100%;
-    }
     &::before {
       content: '';
       position: absolute;
@@ -67,28 +51,12 @@
     }
   }
 
-  &_lower {
-    padding: 3rem 1rem;
-    gap: 2rem;
-    background-color: m.$light_yellow;
-  }
   &_card {
     $absolute_values: (100, 75, 125);
     $default_box_width: 361;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     h2 {
-      margin: 1rem 0;
-      @include m.get_font(500, 20px, 1.1);
-    }
-    p {
-      text-align: center;
-      @include m.get_font(400, 18px, 1.6);
-    }
-    .abs_elem {
-      position: absolute;
+      @include m.get_font(500, 1.25rem, 1.1);
     }
     @for $i from 1 through 3 {
       // Calculate the percentage of right value to the default box value according to mobile and get the percentage value from it
@@ -96,8 +64,6 @@
         $right_value: nth($absolute_values, $i);
 
         .abs_elem {
-          top: 0;
-          right: 50%;
           transform: translateX(#{$right_value * 1%});
         }
       }
@@ -106,74 +72,41 @@
 }
 
 .prods {
-  text-align: center;
-  padding: 3rem 1rem;
-  gap: 2rem;
-  background-color: m.$dark;
-
-  &_heading {
-    gap: 2rem;
-    span {
-      display: block;
-      color: #fff;
-      @include m.get_font(700, 32px, 1.1);
-    }
-    a {
-      display: inline-flex;
-      padding: 1.25rem 3rem;
-    }
-  }
-
   &_card {
     // Border radius to apply to both card and image
     $border_radius: 0.625rem;
     //
 
-    z-index: 1;
     border-radius: $border_radius;
     background-color: m.$dark;
-    text-align: left;
-    color: #fff;
-    padding-bottom: 2rem;
-    box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.07),
-      0px 25px 50px -12px rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.07),
+      0 25px 50px -12px rgba(255, 255, 255, 0.25);
 
     & > picture img {
       width: 100%;
       aspect-ratio: 361/220;
-      object-fit: cover;
       object-position: center;
-      margin-bottom: 2rem;
       border-top-left-radius: $border_radius;
       border-top-right-radius: $border_radius;
     }
     .title {
-      padding: 0 2rem;
-      margin-bottom: 1rem;
-      @include m.get_font(700, 24px, 1.1);
+      @include m.get_font(700, 1.5rem, 1.1);
     }
     p {
-      margin-bottom: 2rem;
-      padding: 0 2rem;
-      @include m.get_font(400, 18px, 1.6);
+      @include m.get_font(400, 1.125rem, 1.6);
     }
     a {
-      margin: 0 2rem;
-      padding: 1rem;
       img {
         width: 24px;
       }
       span {
-        padding: 0 1rem;
         letter-spacing: 0.5px;
-        @include m.get_font(500, 20px, 1.2);
+        @include m.get_font(500, 1.25rem, 1.2);
       }
     }
   }
   .card_wrapper {
     .rect {
-      position: absolute;
-      z-index: 1;
       aspect-ratio: 1;
       rect {
         width: 100%;
@@ -195,54 +128,19 @@
       width: 41%;
       left: -1rem;
     }
-    .rect-3 {
-      display: none;
-    }
-    .rect-4 {
-      display: none;
-    }
   }
 }
 
 .join {
-  padding: 1rem 1rem 3.5rem;
   .wrapper {
-    padding: 2rem 1rem;
-    background-color: #fff;
     border-radius: 1.875rem;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.07),
-      0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.07),
+      0 20px 25px -5px rgba(0, 0, 0, 0.1);
   }
   .left {
-    z-index: 2;
-    display: flex;
-    gap: 1.5rem;
-    padding: 2rem 1rem;
-    span {
-      text-align: center;
-      color: m.$dark;
-      @include m.get_font(700, 32px, 1.1);
-    }
-    ul {
-      gap: 0.5rem;
-      width: 100%;
-    }
-    li {
-      width: 100%;
-      gap: 0.5rem;
-      p {
-        margin: 0;
-      }
-    }
     a {
-      display: inline-flex;
-      padding: 1rem 2rem;
       @include m.get_font(500, 20px, 1.2);
     }
-  }
-
-  .right {
-    z-index: 1;
   }
 
   // Border radius for video screen
@@ -250,13 +148,11 @@
 
   .video_wrapper {
     border-radius: $border_radius;
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.07),
-      0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.07),
+      0 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
 
   .top_bar {
-    padding: 1rem;
-    background-color: #fff;
     gap: 5px;
     border-top-left-radius: $border_radius;
     border-top-right-radius: $border_radius;
@@ -282,17 +178,13 @@
     border-bottom-left-radius: $border_radius;
     border-bottom-right-radius: $border_radius;
     img {
-      width: 100%;
       aspect-ratio: 329/193;
-      object-fit: cover;
       object-position: bottom;
       border-bottom-left-radius: $border_radius;
       border-bottom-right-radius: $border_radius;
     }
   }
   .play {
-    top: 50%;
-    left: 50%;
     border-radius: 100px;
     transform: translate(-50%, -50%);
     padding: 1.5rem 1.25rem 1.5rem 1.75rem;
@@ -303,9 +195,8 @@
     }
   }
   .shapes {
-    svg {
-      position: absolute;
-    }
+    user-select: none;
+    pointer-events: none;
     .shape-1 {
       width: 104vw;
       transform: rotate(-45deg);
@@ -350,25 +241,8 @@
 }
 
 .testimonials {
-  padding: 3rem 0;
-  &_heading {
-    text-align: center;
-    margin-bottom: 2rem;
-    span {
-      display: block;
-      width: 100%;
-      color: m.$dark;
-      @include m.get_font(700, 2rem, 1.1);
-    }
-  }
-  .swiper-slide {
-    height: auto;
-    align-self: stretch;
-    position: relative;
-  }
-
-  &-swiper{
-    &::before{
+  &-swiper {
+    &::before {
       content: '';
       position: absolute;
       left: 0;
@@ -379,49 +253,42 @@
       z-index: -1;
     }
   }
+  .swiper-slide{
+    height: auto;
+    align-self: stretch;
+  }
 }
 
 .testimonial {
   background-color: #fff;
-  z-index: 2;
-  height: 100%;
-  gap: 0.5rem;
-  padding: 1.5rem;
   border-radius: 1.25rem;
-  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.07),
-    0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.07),
+    0 10px 15px -3px rgba(0, 0, 0, 0.1);
   .icon {
-    padding: 1rem 0;
     img {
       height: 2rem;
       max-width: 100%;
-      object-fit: contain;
       object-position: center;
     }
   }
   p {
-    margin: 0;
-    color: m.$dark;
     @include m.get_font(400, 1rem, 1.4);
   }
   .author {
-    padding-top: 1rem;
-    gap: 1rem;
     img {
       width: 4rem;
       height: 4rem;
-      border-radius: 100%;
-      object-fit: cover;
       object-position: center;
-    }
-    span {
-      color: m.$dark;
-      display: block;
-      @include m.get_font(400, 1.125rem, 1.6);
     }
     p {
       color: #475569;
       @include m.get_font(400, 1rem, 1.4);
     }
+  }
+}
+
+.collection {
+  p {
+    text-align: center;
   }
 }
