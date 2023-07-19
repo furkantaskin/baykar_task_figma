@@ -49,31 +49,31 @@ include "components/svg-sprite.php";
         </nav>
     </header>
 
-    <header class="header_sm p-rel d-flex j-b a-c">
+    <header class="header_sm position-relative d-flex justify-content-between align-items-center p-4 z-3">
         <a href="index.php" title="Collers Sportswear" class="header_logo">Collers</a>
-        <div class="menuButton d-flex f-c a-e">
+        <div class="menuButton d-flex flex-column align-items-end">
             <svg width="24" height="24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000">
                 <path d="M3 5h8m-8 7h13M3 19h18" stroke="#000" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
         </div>
-        <nav role="navigation" class="sm_nav" aria-label="Main menu">
-            <ul class="d-flex f-c a-s">
+        <nav role="navigation" class="sm_nav position-absolute top-100 p-4 bg-mf-yellow" aria-label="Main menu">
+            <ul class="d-flex flex-column align-items-start">
                 <li>
-                    <a href="" title="Products">Products</a>
+                    <a href="" title="Products" class="d-block py-1 text-mf-dark fw-medium">Products</a>
                 </li>
                 <li>
-                    <a href="" title="Solutions">Solutions</a>
+                    <a href="" title="Solutions" class="d-block py-1 text-mf-dark fw-medium">Solutions</a>
                 </li>
                 <li>
-                    <a href="" title="Pricing">Pricing</a>
+                    <a href="" title="Pricing" class="d-block py-1 text-mf-dark fw-medium">Pricing</a>
                 </li>
                 <li>
-                    <a href="" title="Resources">Resources</a>
+                    <a href="" title="Resources" class="d-block py-1 text-mf-dark fw-medium">Resources</a>
                 </li>
                 <li>
-                    <a href="" title="Log In">Log In</a>
+                    <a href="" title="Log In" class="d-block py-1 text-mf-dark fw-medium">Log In</a>
                 </li>
             </ul>
-            <a href="" title="Sign up now" class="btn btn-primary">Sign up now</a>
+            <a href="" title="Sign up now" class="btn btn-primary mt-4 text-mf-dark border-mf-dark">Sign up now</a>
         </nav>
     </header>
