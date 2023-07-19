@@ -1,0 +1,40 @@
+// Border radius for video screen
+$border_radius: 1.25rem;
+
+.frame-window {
+  border-radius: $border_radius;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.07),
+    0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  .top_bar {
+    gap: 5px;
+    border-top-left-radius: $border_radius;
+    border-top-right-radius: $border_radius;
+    svg {
+      width: 10px;
+      height: 10px;
+      // Get colors map using svg
+      $colors: (
+        'green': #22c55e,
+        'red': #e11d48,
+        'yellow': #fbbf24,
+      );
+      @each $color, $hex in $colors {
+        &.#{$color} {
+          fill: $hex;
+        }
+      }
+    }
+  }
+  .screen {
+    padding: 0 5px 5px;
+    background-color: #fff;
+    border-bottom-left-radius: $border_radius;
+    border-bottom-right-radius: $border_radius;
+    img {
+      aspect-ratio: 329/193;
+      object-position: bottom;
+      border-bottom-left-radius: $border_radius;
+      border-bottom-right-radius: $border_radius;
+    }
+  }
+}
