@@ -5,6 +5,7 @@
 
 // Remove "!important" from properties
 $enable-important-utilities: false;
+$enable-negative-margins: true;
 
 // Create spacing as the multipliers of 4px instead of 16px
 $custom_spacer: 0.25rem;
