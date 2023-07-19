@@ -22,7 +22,7 @@ include "components/svg-sprite.php";
     <link rel="stylesheet" href="<?= domain ?>assets/css/<?= $call_css ?>.css?v=<?= rand() ?>">
 </head>
 
-<body>
+<body class="overflow-x-hidden">
 
     <header class="header_lg">
         <a href="index.php" class="header_logo" title="Collers Sportswear">Collers</a>
