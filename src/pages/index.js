@@ -1,5 +1,6 @@
 import { mobileMenu } from '../lib/common';
-import Swiper, {Autoplay, Navigation} from "swiper";
+import Swiper from "swiper";
+import {Autoplay, Navigation} from "swiper/modules";
 import GLightbox from "glightbox";
 
 mobileMenu();
