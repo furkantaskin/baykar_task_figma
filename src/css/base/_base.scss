@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use '../abstracts/mixins' as m;
 
 // Base declarations for general elements
 
@@ -16,13 +17,17 @@ ul{
   margin: 0;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 *:focus {
   outline: none;
 }
 picture{
   display: block;
+}
+
+.cm-container{
+  width: 100%;
+  padding: 0 1rem;
+  @include m.cm_responsive(m.$lg){
+    padding: 0 5rem;
+  }
 }
