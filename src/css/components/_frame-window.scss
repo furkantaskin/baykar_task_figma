@@ -1,3 +1,4 @@
+@use "../abstracts/mixins" as m;
 // Border radius for video screen
 $border_radius: 1.25rem;
 
@@ -26,15 +27,20 @@ $border_radius: 1.25rem;
     }
   }
   .screen {
-    padding: 0 5px 5px;
     background-color: #fff;
     border-bottom-left-radius: $border_radius;
     border-bottom-right-radius: $border_radius;
     img {
-      aspect-ratio: 329/193;
+      aspect-ratio: 769/410;
+      border: {
+        width: 0 5px;
+        style: solid;
+        color: #fff;
+      }
       object-position: bottom;
       border-bottom-left-radius: $border_radius;
       border-bottom-right-radius: $border_radius;
     }
   }
+
 }
