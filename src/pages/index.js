@@ -17,6 +17,8 @@ const mapRings = document.querySelectorAll(".map .ring");
 const langElem = document.querySelector(".lang");
 const langElemText = langElem.querySelector("span");
 let isLangEn = true;
+const mapContainer = document.querySelector(".world");
+const mapText = mapContainer.querySelector(".text_area")
 
 GLightbox({
   plyr: {
@@ -57,7 +59,7 @@ new Swiper(testimonialsSwiper, {
 
 mapRings.forEach((ring) => {
   new Popover(ring, {
-    placement: "right",
+    placement: "top",
     trigger: "hover",
     html: true,
     title: function(){
@@ -72,3 +74,10 @@ langElem.addEventListener("click", function() {
   isLangEn = !isLangEn;
   langElemText.innerText = isLangEn ? "EN" : "TR";
 });
+
+
+// Keep text at the center of div
+mapContainer.addEventListener("scroll", function(){
+  let leftOffset = mapContainer.scrollLeft;
+  mapText.style.transform = `translateX(${leftOffset}px)`
+})
