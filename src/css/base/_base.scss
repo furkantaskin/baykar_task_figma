@@ -2,9 +2,7 @@
 @use '../abstracts/mixins' as m;
 
 // Base declarations for general elements
-
-body {
-  position: relative;
+body{
   font-family: "Roboto", sans-serif;
 }
 a {
@@ -26,7 +24,7 @@ picture{
 .cm-container{
   width: 100%;
   padding: 0 1rem;
-  @include m.cm_responsive(m.$lg){
+  @include m.cm_responsive(m.$md){
     padding: 0 5rem;
   }
 }
