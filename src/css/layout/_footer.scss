@@ -1,1 +1,44 @@
 @use '../main' as m;
+
+footer {
+  .upper {
+    border-top: 1px solid #334155;
+    border-bottom: 1px solid #334155;
+  }
+  span {
+    @include m.get_font($line_height: 1.1);
+  }
+  .footer-nav {
+    flex: 1;
+    a {
+      @include m.get_font(400, 16px, 1.4);
+    }
+  }
+  .apple_store {
+    width: 120px;
+  }
+  .play_store {
+    width: 135px;
+  }
+  .social {
+    img {
+      width: 24px;
+      @include m.call_template();
+      @include m.no_hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .copy{
+    span{
+      @include m.get_font(400, 16px, 1.4);
+    }
+    a{
+      @include m.get_font(400, 16px, 1.4);
+    }
+    svg{
+        width: 24px;
+        fill: #fff;
+    }
+  }
+}
