@@ -10,6 +10,7 @@
 .top {
   @include m.cm_responsive(m.$md) {
     background: linear-gradient(180deg, #fffbeb 0%, #fff 100%);
+    padding-top: 100px;
   }
 }
 
@@ -106,14 +107,12 @@
     &_upper {
       h1 {
         font-size: 4.5rem;
-        font-weight: 700;
       }
       &_text {
         flex: 3;
       }
       .img_wrapper {
         flex: 2;
-        width: auto;
       }
       &::before {
         content: unset;
@@ -126,6 +125,8 @@
 }
 
 .prods {
+  border-top: 1px solid m.$light;
+  border-bottom: 1px solid m.$light;
   &_card {
     // Border radius to apply to both card and image
     $border_radius: 0.625rem;
@@ -156,6 +157,20 @@
       span {
         letter-spacing: 0.5px;
         @include m.get_font(500, 1.25rem, 1.2);
+      }
+    }
+    .icon {
+      width: 24px;
+      height: 24px;
+      @include m.mask-parameters(
+        $image: '../img/svg/shopping-cart.svg'
+      );
+    }
+    .btn-dark {
+      @include m.no_hover() {
+        .icon {
+          background-color: m.$dark;
+        }
       }
     }
   }
@@ -239,6 +254,12 @@
   .shapes {
     user-select: none;
     pointer-events: none;
+    svg {
+      rect {
+        width: 100%;
+        height: 100%;
+      }
+    }
     .shape-1 {
       width: 104vw;
       transform: rotate(-45deg);
@@ -250,11 +271,13 @@
       width: 35vw;
       right: -14vw;
       bottom: -15vw;
+      border-radius: 50px;
     }
     .shape-3 {
       bottom: calc(100% + 7px);
       right: 2rem;
       width: 36px;
+      border-radius: 100%;
       fill: #0369a1;
     }
     .shape-4 {
@@ -263,6 +286,7 @@
       transform: translateY(-50%);
       z-index: 2;
       width: 50px;
+      border-radius: 100%;
       fill: #15803d;
     }
 
@@ -278,6 +302,39 @@
       width: 46px;
       transform: translateY(50%);
       fill: #a21caf;
+    }
+  }
+  @include m.cm_responsive(m.$sm){
+    .shapes{
+      .shape-1{
+        width: 85vw;
+        left: 12vw;
+        top: 12vw;
+      }
+      .shape-2{
+        right: -11vw;
+        bottom: -10vw;
+      }
+    }
+  }
+  @include m.cm_responsive(m.$md) {
+    padding-top: 160px;
+    .left,
+    .right {
+      flex: 0 0 auto;
+      width: calc(50% - 40px);
+    }
+    .shapes {
+      .shape-1 {
+        width: 126%;
+        top: 25%;
+        left: -18%;
+      }
+      .shape-2 {
+        width: 41%;
+        right: -22%;
+        bottom: -110px;
+      }
     }
   }
 }
@@ -298,6 +355,33 @@
   .swiper-slide {
     height: auto;
     align-self: stretch;
+  }
+  @include m.cm_responsive(m.$md) {
+    &_nav {
+      div {
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+        border: 1px solid m.$amber;
+        @include m.call_template();
+        svg {
+          width: 24px;
+          stroke: m.$amber;
+          @include m.call_template();
+        }
+        &.left {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+        &:hover {
+          background-color: m.$amber;
+          svg {
+            stroke: #fff;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -327,6 +411,11 @@
       @include m.get_font(400, 1rem, 1.4);
     }
   }
+  @include m.cm_responsive(m.$md) {
+    p {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 .collection {
@@ -339,16 +428,30 @@
     img {
       width: 24px;
     }
+    picture{
+      display: flex;
+    }
     span {
       @include m.get_font(500, 1.25rem, 1.2);
     }
-    &.active {
+    & > *:last-child{
+      margin-left: auto;
+      opacity: 0;
+      transform: translateX(25%);
+      @include m.call_template();
+    }
+    &.active, &:hover {
       box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07),
         0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+        & > *:last-child{
+          transform: translateX(0);
+          opacity: 1;
+        }
     }
+    
   }
   .frame-window {
-    width: 75vw;
+    width: 100%;
     &:nth-of-type(2) {
       $top_val: round(math.div(57, 201) * 100);
       $left_val: round(math.div(36, 294) * 100);
@@ -373,15 +476,52 @@
   .pattern {
     width: 1440px;
   }
+  .frames {
+    flex: 0 0 auto;
+    width: 75vw;
+  }
+  @include m.cm_responsive(m.$md) {
+    .buttons {
+      white-space: normal;
+      flex: 0 0 auto;
+      width: fit-content;
+    }
+    .button {
+      width: 256px;
+    }
+    .frames {
+      width: 59%;
+    }
+    .collection_img {
+      width: 34%;
+      aspect-ratio: 256/286;
+    }
+  }
+  @include m.cm_responsive(m.$xl) {
+    .frame-window {
+      width: 760px;
+    }
+  }
 }
 
 .world {
+  @include m.call_template("noscroll");
   .map {
     width: 1048px;
   }
 
   &_map {
     opacity: 0.5;
+  }
+
+  .text_area {
+    pointer-events: none;
+    h2 {
+      @include m.get_font(800, 3rem, 1.1);
+    }
+    p {
+      @include m.get_font(700, 2rem, 1.1);
+    }
   }
 
   // Create array for positions (left and right) and width
@@ -443,6 +583,10 @@
     stroke-width: 3;
     fill: none;
     stroke: #a3e635;
+    @include m.call_template();
+    &:hover{
+      fill: #D9F99D;
+    }
   }
   @each $nth, $vals in $rings {
     $width_val: map.get($vals, 'width');
@@ -452,6 +596,16 @@
       width: $width_val;
       top: $top_val;
       left: $left_val;
+    }
+  }
+  @include m.cm_responsive(m.$md) {
+    .text_area {
+      h2 {
+        font-size: 6rem;
+      }
+      p {
+        font-size: 3.5rem;
+      }
     }
   }
 }
