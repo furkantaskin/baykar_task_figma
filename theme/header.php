@@ -24,29 +24,32 @@ include "components/svg-sprite.php";
 
 <body class="overflow-x-hidden position-relative">
 
-    <header class="header_lg d-none d-lg-flex justify-content-between align-items-center py-6 px-20">
-        <a href="index.php" class="header_logo" title="Collers Sportswear">Collers</a>
-        <nav role="navigation" aria-label="Main menu" class="d-flex align-items-center gap-4">
-            <ul class="d-flex gap-4">
-                <li>
-                    <a href="" title="Products" class="text-mf-amber fw-medium">Products</a>
-                </li>
-                <li>
-                    <a href="" title="Solutions" class="text-mf-amber fw-medium">Solutions</a>
-                </li>
-                <li>
-                    <a href="" title="Pricing" class="text-mf-amber fw-medium">Pricing</a>
-                </li>
-                <li>
-                    <a href="" title="Resources" class="text-mf-amber fw-medium">Resources</a>
-                </li>
-                <li>
-                    <a href="" title="Log In" class="text-mf-amber fw-medium">Log In</a>
-                </li>
-            </ul>
-            <a href="" title="Sign up now" class="btn btn-primary">Sign up now</a>
+    <header
+        class="header_lg d-none d-lg-block position-absolute top-0 start-0 w-100 py-6 z-3">
+        <div class="cm-container d-lg-flex justify-content-between align-items-center">
+            <a href="index.php" class="header_logo" title="Collers Sportswear">Collers</a>
+            <nav role="navigation" aria-label="Main menu" class="d-flex align-items-center gap-4">
+                <ul class="d-flex gap-4">
+                    <li>
+                        <a href="" title="Products" class="text-mf-amber fw-medium px-2">Products</a>
+                    </li>
+                    <li>
+                        <a href="" title="Solutions" class="text-mf-amber fw-medium px-2">Solutions</a>
+                    </li>
+                    <li>
+                        <a href="" title="Pricing" class="text-mf-amber fw-medium px-2">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="" title="Resources" class="text-mf-amber fw-medium px-2">Resources</a>
+                    </li>
+                    <li>
+                        <a href="" title="Log In" class="text-mf-amber fw-medium px-2">Log In</a>
+                    </li>
+                </ul>
+                <a href="" title="Sign up now" class="btn btn-primary px-7">Sign up now</a>
 
-        </nav>
+            </nav>
+        </div>
     </header>
 
     <header class="header_sm position-relative d-flex d-lg-none justify-content-between align-items-center p-4 z-3">
