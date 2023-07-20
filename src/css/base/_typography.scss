@@ -4,6 +4,9 @@
 
 .heading{
     @include m.get_font(700, 2rem, 1.1);
+    @include m.cm_responsive(m.$md){
+        font-size: 3.5rem;
+    }
 }
 .txt{
     @include m.get_font(400, 1.125rem, 1.6);
