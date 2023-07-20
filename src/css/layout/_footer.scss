@@ -12,6 +12,10 @@ footer {
     flex: 1;
     a {
       @include m.get_font(400, 16px, 1.4);
+      @include m.call_template();
+      @include m.no_hover(){
+        opacity: .8;
+      }
     }
   }
   .apple_store {
