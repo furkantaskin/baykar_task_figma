@@ -36,13 +36,17 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import '../../../node_modules/bootstrap/scss/mixins';
 @import '../../../node_modules/bootstrap/scss/utilities';
 
-// Make width responsive
+// Make width and overflow responsive
 $utilities: map-merge(
   $utilities, (
     "width": map-merge(
       map-get($utilities, "width"),
       ( responsive: true ),
     ),
+    "overflow": map-merge(
+      map-get($utilities, "overflow"),
+      ( responsive: true ),
+    )
   )
 );
 
