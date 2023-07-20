@@ -1,18 +1,28 @@
+// Local modules
 import { mobileMenu } from '../lib/common';
-import Swiper from "swiper";
-import {Autoplay, Navigation} from "swiper/modules";
-import GLightbox from "glightbox";
+
+// 3rd-party modules
+import Swiper from 'swiper';
+import { Autoplay, Navigation } from 'swiper/modules';
+import GLightbox from 'glightbox';
+import Popover from 'bootstrap/js/dist/popover';
+
 
 mobileMenu();
 
-const testimonialsSwiper = document.querySelector(".testimonials-swiper");
-
+const testimonialsSwiper = document.querySelector(
+  '.testimonials-swiper'
+);
+const mapRings = document.querySelectorAll(".map .ring");
+const langElem = document.querySelector(".lang");
+const langElemText = langElem.querySelector("span");
+let isLangEn = true;
 
 GLightbox({
-  plyr:{
+  plyr: {
     ratio: '16/9',
     muted: false,
-  }
+  },
 });
 
 new Swiper(testimonialsSwiper, {
@@ -26,14 +36,33 @@ new Swiper(testimonialsSwiper, {
       slidesPerView: 1.2,
     },
     768: {
-      slidesPerView: 2.4
+      slidesPerView: 2.4,
     },
     1024: {
-      slidesPerView: 3.5
-    }
+      slidesPerView: 3.5,
+    },
   },
   autoplay: {
     delay: 3000,
-    pauseOnMouseEnter: true
-  }
-})
+    pauseOnMouseEnter: true,
+  },
+});
+
+
+mapRings.forEach((ring) => {
+  new Popover(ring, {
+    placement: "right",
+    trigger: "hover",
+    html: true,
+    title: function(){
+      let img = new Image();
+      img.src = ring.dataset.img;
+      return img;
+    }
+  });
+});
+
+langElem.addEventListener("click", function() {
+  isLangEn = !isLangEn;
+  langElemText.innerText = isLangEn ? "EN" : "TR";
+});
