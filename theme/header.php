@@ -22,26 +22,26 @@ include "components/svg-sprite.php";
     <link rel="stylesheet" href="<?= domain ?>assets/css/<?= $call_css ?>.css?v=<?= rand() ?>">
 </head>
 
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden position-relative">
 
-    <header class="header_lg">
+    <header class="header_lg d-none d-lg-flex justify-content-between align-items-center py-6 px-20">
         <a href="index.php" class="header_logo" title="Collers Sportswear">Collers</a>
-        <nav role="navigation" aria-label="Main menu">
-            <ul>
+        <nav role="navigation" aria-label="Main menu" class="d-flex align-items-center gap-4">
+            <ul class="d-flex gap-4">
                 <li>
-                    <a href="" title="Products">Products</a>
+                    <a href="" title="Products" class="text-mf-amber fw-medium">Products</a>
                 </li>
                 <li>
-                    <a href="" title="Solutions">Solutions</a>
+                    <a href="" title="Solutions" class="text-mf-amber fw-medium">Solutions</a>
                 </li>
                 <li>
-                    <a href="" title="Pricing">Pricing</a>
+                    <a href="" title="Pricing" class="text-mf-amber fw-medium">Pricing</a>
                 </li>
                 <li>
-                    <a href="" title="Resources">Resources</a>
+                    <a href="" title="Resources" class="text-mf-amber fw-medium">Resources</a>
                 </li>
                 <li>
-                    <a href="" title="Log In">Log In</a>
+                    <a href="" title="Log In" class="text-mf-amber fw-medium">Log In</a>
                 </li>
             </ul>
             <a href="" title="Sign up now" class="btn btn-primary">Sign up now</a>
@@ -49,7 +49,7 @@ include "components/svg-sprite.php";
         </nav>
     </header>
 
-    <header class="header_sm position-relative d-flex justify-content-between align-items-center p-4 z-3">
+    <header class="header_sm position-relative d-flex d-lg-none justify-content-between align-items-center p-4 z-3">
         <a href="index.php" title="Collers Sportswear" class="header_logo">Collers</a>
         <div class="menuButton d-flex flex-column align-items-end">
             <svg width="24" height="24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000">
