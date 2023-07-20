@@ -1,8 +1,7 @@
 @use '../abstracts/mixins' as m;
 @use '../abstracts/variables' as v;
 
-
-.btn{
+.btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,13 +24,12 @@
   }
 }
 
-
-.btn-dark{
+.btn-dark {
   border-color: #fff;
   font-size: 1.25rem;
   line-height: 1.2;
   color: #fff;
-  @include m.no_hover{
+  @include m.no_hover {
     background-color: #fff;
     color: v.$dark;
   }
