@@ -474,7 +474,7 @@
     }
   }
   .pattern {
-    width: 1440px;
+    width: max(1440px, 100vw);
   }
   .frames {
     flex: 0 0 auto;
