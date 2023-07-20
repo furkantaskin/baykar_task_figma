@@ -7,6 +7,12 @@
 @use '../vendors/swiper';
 @use '../vendors/glightbox';
 
+.top {
+  @include m.cm_responsive(m.$md) {
+    background: linear-gradient(180deg, #fffbeb 0%, #fff 100%);
+  }
+}
+
 .banner {
   &_upper {
     h1 {
@@ -65,8 +71,56 @@
 
         .abs_elem {
           transform: translateX(#{$right_value * 1%});
+          @include m.cm_responsive(m.$md) {
+            right: unset;
+            left: 0;
+            @if $i == 1 {
+              transform: translateX(50%);
+            } @else if $i == 3 {
+              transform: translateX(100%);
+            }
+          }
         }
       }
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border-style: solid;
+    border-width: 0 0 56vw 100vw;
+    aspect-ratio: 393/324;
+    border-color: transparent transparent m.$light_yellow transparent;
+    display: none;
+  }
+  @include m.cm_responsive(m.$md) {
+    &::before {
+      display: block;
+    }
+    &_upper {
+      h1 {
+        font-size: 4.5rem;
+        font-weight: 700;
+      }
+      &_text {
+        flex: 3;
+      }
+      .img_wrapper {
+        flex: 2;
+        width: auto;
+      }
+      &::before {
+        content: unset;
+      }
+    }
+    &_lower {
+      background-color: transparent;
     }
   }
 }
@@ -127,6 +181,35 @@
       top: 11%;
       width: 41%;
       left: -1rem;
+    }
+    @include m.cm_responsive(m.$md) {
+      .rect-1 {
+        width: 75%;
+        bottom: 25px;
+        left: -35px;
+      }
+      .rect-2 {
+        width: 44%;
+        right: unset;
+        left: -1.25rem;
+        top: -31px;
+      }
+      .rect-3 {
+        width: 36%;
+        right: -14px;
+        bottom: 48px;
+      }
+      .rect-4 {
+        width: 64%;
+        top: 33px;
+        right: -43px;
+      }
+      .rect-5 {
+        width: 56%;
+        top: unset;
+        left: 26%;
+        bottom: -24px;
+      }
     }
   }
 }
@@ -247,6 +330,7 @@
 }
 
 .collection {
+  padding-bottom: 154px;
   @include m.call_template('noscroll');
   .buttons {
     white-space: nowrap;
@@ -284,6 +368,127 @@
       box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.07),
         0px 25px 50px -12px rgba(0, 0, 0, 0.25);
       border-radius: 10px;
+    }
+  }
+  .pattern {
+    width: 1440px;
+  }
+}
+
+.world {
+  .map {
+    width: 1048px;
+  }
+
+  &_map {
+    opacity: 0.5;
+  }
+
+  // Create array for positions (left and right) and width
+  $svg_width: 1048px;
+  $svg_height: 633px;
+  $rings: (
+    '1': (
+      'width': 16px,
+      'top': 67px,
+      'left': 413px,
+    ),
+    '2': (
+      'width': 30px,
+      'top': 168px,
+      'left': 328px,
+    ),
+    '3': (
+      'width': 32px,
+      'top': 228px,
+      'left': 141px,
+    ),
+    '4': (
+      'width': 24px,
+      'top': 298px,
+      'left': 210px,
+    ),
+    '5': (
+      'width': 16px,
+      'top': 329px,
+      'left': 886px,
+    ),
+    '6': (
+      'width': 24px,
+      'top': 329px,
+      'left': 785px,
+    ),
+    '7': (
+      'width': 25px,
+      'top': 432px,
+      'left': 584px,
+    ),
+    '8': (
+      'width': 16px,
+      'top': 468px,
+      'left': 371px,
+    ),
+    '9': (
+      'width': 24px,
+      'top': 498px,
+      'left': 324px,
+    ),
+    '10': (
+      'width': 24px,
+      'top': 488px,
+      'left': 910px,
+    ),
+  );
+  .ring {
+    stroke-width: 3;
+    fill: none;
+    stroke: #a3e635;
+  }
+  @each $nth, $vals in $rings {
+    $width_val: map.get($vals, 'width');
+    $top_val: map.get($vals, 'top');
+    $left_val: map.get($vals, 'left');
+    .ring-#{$nth} {
+      width: $width_val;
+      top: $top_val;
+      left: $left_val;
+    }
+  }
+}
+
+.popover {
+  --bs-popover-max-width: 266px;
+  --bs-popover-arrow-border: #e2e8f0;
+  --bs-popover-bg: #e2e8f0;
+  background-color: transparent;
+  border: none;
+  &-header {
+    width: 100%;
+    padding: 0;
+    z-index: 2;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.07),
+      0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    img {
+      overflow: hidden;
+      width: 100%;
+      border: 5px solid white;
+      border-radius: 10px;
+    }
+  }
+  &-body {
+    padding: 1rem 1rem 0.5rem;
+    width: calc(100% - 1rem);
+    margin: -0.5rem auto 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    background-color: m.$light;
+    @include m.get_font(400, 14px, 1.1);
+    strong {
+      font-weight: 500;
     }
   }
 }
