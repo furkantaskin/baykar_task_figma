@@ -5,6 +5,8 @@
 
 // Remove "!important" from properties
 $enable-important-utilities: false;
+
+// Enable negative margin
 $enable-negative-margins: true;
 
 // Create spacing as the multipliers of 4px instead of 16px
@@ -34,10 +36,22 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import '../../../node_modules/bootstrap/scss/mixins';
 @import '../../../node_modules/bootstrap/scss/utilities';
 
+// Make width responsive
+$utilities: map-merge(
+  $utilities, (
+    "width": map-merge(
+      map-get($utilities, "width"),
+      ( responsive: true ),
+    ),
+  )
+);
+
 // Layout & components
 @import '../../../node_modules/bootstrap/scss/root';
 @import '../../../node_modules/bootstrap/scss/reboot';
 @import '../../../node_modules/bootstrap/scss/type';
+@import '../../../node_modules/bootstrap/scss/transitions';
+@import '../../../node_modules/bootstrap/scss/popover';
 
 /* 
 @import '../../../node_modules/bootstrap/scss/root';
