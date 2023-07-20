@@ -1,7 +1,7 @@
 .DS_Store
 .idea/
-node_modules/
 .env
-dist/
+.vercel
+node_modules/
 theme/assets/css
 theme/assets/js
