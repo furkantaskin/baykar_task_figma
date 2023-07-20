@@ -6,8 +6,20 @@
   @include m.get_font(700, 2rem, 1.1);
 }
 
-.header_lg {
-  display: none;
+@include m.cm_responsive(m.$md) {
+  .header_sm {
+    display: none;
+  }
+  .header_lg {
+    ul {
+      a {
+        @include m.call_template();
+        &:hover {
+          color: m.$dark;
+        }
+      }
+    }
+  }
 }
 .menuButton {
   width: 24px;
@@ -16,7 +28,6 @@
   }
 }
 .sm_nav {
-  position: absolute;
   left: 1rem;
   right: 1rem;
   transform: translateY(-50%);
