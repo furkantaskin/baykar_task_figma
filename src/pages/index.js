@@ -31,6 +31,7 @@ new Swiper(testimonialsSwiper, {
   speed: 400,
   initialSlide: 1,
   spaceBetween: 24,
+  loop: true,
   breakpoints: {
     0: {
       slidesPerView: 1.2,
@@ -39,13 +40,18 @@ new Swiper(testimonialsSwiper, {
       slidesPerView: 2.4,
     },
     1024: {
-      slidesPerView: 3.5,
+      slidesPerView: 4,
+      initialSlide: 2,
     },
   },
   autoplay: {
     delay: 3000,
     pauseOnMouseEnter: true,
   },
+  navigation: {
+    nextEl: ".testimonials_nav .right",
+    prevEl: ".testimonials_nav .left"
+  }
 });
 
 
