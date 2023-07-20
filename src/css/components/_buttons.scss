@@ -9,6 +9,10 @@
   border-radius: 0.5rem;
   letter-spacing: 0.5px;
   font-weight: 500;
+  @include m.call_template();
+  & > * {
+    @include m.call_template();
+  }
 }
 
 .btn-primary {
@@ -17,7 +21,6 @@
   padding: 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  @include m.call_template();
   @include m.no_hover {
     background-color: v.$amber;
     color: #fff;
@@ -29,8 +32,12 @@
   font-size: 1.25rem;
   line-height: 1.2;
   color: #fff;
+  @include m.call_template();
   @include m.no_hover {
     background-color: #fff;
     color: v.$dark;
+    svg{
+      fill: v.$dark;
+    }
   }
 }
