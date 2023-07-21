@@ -33,7 +33,8 @@
     "postcss": "postcss --no-map theme/assets/css/*.css --dir theme/assets/css --config postcss.config.js",
     "dev": "concurrently --names \"Sass,esbuild\" -c \"bgMagenta.bold,bgYellow.bold\" --kill-others \"npm run sass\" \"node mufferplate.js development\"",
     "build": "sass --no-source-map --style=compressed src/css/pages:theme/assets/css && node mufferplate.js production",
-    "bundle": "npm run build && node bundlephp.cjs"
+    "bundle": "npm run build && node bundlephp.cjs",
+    "bundle-postcss" : "postcss --no-map dist/assets/css/*.css --dir dist/assets/css --config postcss.config.js"
   },
   "repository": {
     "type": "git",
