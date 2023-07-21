@@ -21,7 +21,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="text-white footer-nav text-center">
+            <div class="text-white footer-nav text-center text-md-start">
                 <span class="py-3 d-block">Solutions</span>
                 <ul>
                     <li>
@@ -41,7 +41,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="text-white footer-nav text-center">
+            <div class="text-white footer-nav text-center text-md-start">
                 <span class="py-3 d-block">Support</span>
                 <ul>
                     <li>
