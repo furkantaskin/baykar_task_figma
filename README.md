@@ -18,3 +18,5 @@ Sistem üzerinde mümkün olduğunca minimize boyutlarda bir CSS ve JS oluşturm
 JavaScript kısmında yoğunluğa sebep olunmaması için esbuild ile modüler yapılar kullanılarak kod kalabalığı ve işlem yükünün önüne geçildi. Projeye ait HTMl formatı dist klasörü içinden temin edilebilir.
 
 PageSpeed ve GTMetrix verilerine göre sistem PageSpeed üzerinde mobil için 80 ile 95 arası ve masaüstü için 90-99 arası skorlar elde ederken bu sayı GTMetrix üzerinde 100 olmakta. 
+
+Sınav sistemi projesi [diğer repoda](https://github.com/furkantaskin/baykar_task_exam) barındırılmaktadır.
