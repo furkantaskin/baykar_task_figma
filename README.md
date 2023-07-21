@@ -2,6 +2,8 @@
 
  Birincil figma görevi için hazırlanan projenin [Vercel'e deploy edilmiş hali](https://baykarfigma.vercel.app/) incelenebilir. 
 
+ Proje, kendim tarafından geliştirilen [mufferplate](https://github.com/furkantaskin/mufferplate) ile oluşturulmuştur.
+
 ## Kullanılan Yapılar
 
 - Bootstrap
