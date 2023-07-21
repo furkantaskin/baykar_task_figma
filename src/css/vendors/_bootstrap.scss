@@ -54,9 +54,10 @@ $utilities: map-merge(
 @import '../../../node_modules/bootstrap/scss/root';
 @import '../../../node_modules/bootstrap/scss/reboot';
 @import '../../../node_modules/bootstrap/scss/type';
+/*! purgecss start ignore */
 @import '../../../node_modules/bootstrap/scss/transitions';
 @import '../../../node_modules/bootstrap/scss/popover';
-
+/*! purgecss end ignore */
 /* 
 @import '../../../node_modules/bootstrap/scss/root';
 @import '../../../node_modules/bootstrap/scss/reboot';

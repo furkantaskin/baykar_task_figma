@@ -1,3 +1,4 @@
+/*! purgecss start ignore */
 @use 'sass:math';
 @use 'sass:map';
 @use 'sass:list';
@@ -425,6 +426,7 @@
     white-space: nowrap;
   }
   .button {
+    @include m.call_template();
     img {
       width: 24px;
     }
@@ -648,3 +650,4 @@
     }
   }
 }
+/*! purgecss end ignore */
