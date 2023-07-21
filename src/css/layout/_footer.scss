@@ -1,5 +1,5 @@
 @use '../main' as m;
-
+/*! purgecss start ignore */
 footer {
   .upper {
     border-top: 1px solid #334155;
@@ -46,3 +46,4 @@ footer {
     }
   }
 }
+/*! purgecss end ignore */

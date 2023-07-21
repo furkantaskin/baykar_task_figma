@@ -1,6 +1,7 @@
-/*! purgecss start ignore */
+
 @use '../main' as m;
 
+/*! purgecss start ignore */
 .header_logo {
   display: block;
   color: m.$amber;

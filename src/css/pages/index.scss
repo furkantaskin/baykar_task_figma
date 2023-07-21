@@ -1,4 +1,4 @@
-/*! purgecss start ignore */
+
 @use 'sass:math';
 @use 'sass:map';
 @use 'sass:list';
@@ -8,6 +8,7 @@
 @use '../vendors/swiper';
 @use '../vendors/glightbox';
 
+/*! purgecss start ignore */
 .top {
   @include m.cm_responsive(m.$md) {
     background: linear-gradient(180deg, #fffbeb 0%, #fff 100%);
