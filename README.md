@@ -19,4 +19,10 @@ JavaScript kısmında yoğunluğa sebep olunmaması için esbuild ile modüler y
 
 PageSpeed ve GTMetrix verilerine göre sistem PageSpeed üzerinde mobil için 80 ile 95 arası ve masaüstü için 90-99 arası skorlar elde ederken bu sayı GTMetrix üzerinde 100 olmakta. 
 
+## Kaynak Dosyalar
+
+- HTML kısmına theme/index.php, theme/footer.php ve theme/header.php üzerinden ulaşılabilir
+- Stillendirmeye src/css içinden ulaşılabilir 
+- JavaScript kaynak dosyalarına src/pages ve src/lib içinden ulaşılabilir
+
 Sınav sistemi projesi [diğer repoda](https://github.com/furkantaskin/baykar_task_exam) barındırılmaktadır.
